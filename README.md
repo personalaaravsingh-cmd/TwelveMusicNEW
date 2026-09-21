@@ -260,4 +260,4 @@ Bugs are tracked as [GitHub issues](https://github.com/openUwU/eleven/issues) â€
 - **Created by**: [@mooncarli](https://github.com/mooncarli), [@bre4d777](https://github.com/bre4d777), [@dev-prayag](https://github.com/dev-prayag), and [OpenUwU](https://github.com/openUwU) Contributors.
 
 ### Acknowledgements
-- **[NodeLink](https://github.com/PerformanC/NodeLink)**: For the lyrics fetching implementation ported into the `/lyrics` command.
+- **[NodeLink](https://github.com/PerformanC/NodeLink)**: For the lyrics fetching implementation ported into the `/lyrics` command.\n\n## Status\nAhh Eleven base imported and configured for the shared TripleN Lavalink node.\n
