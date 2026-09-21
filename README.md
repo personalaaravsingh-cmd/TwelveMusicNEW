@@ -1,7 +1,7 @@
-# Eleven
+# Twelve Music
 
-[![CI](https://github.com/openUwU/eleven/actions/workflows/ci.yml/badge.svg)](https://github.com/openUwU/eleven/actions/workflows/ci.yml)
-[![Release](https://github.com/openUwU/eleven/actions/workflows/release.yml/badge.svg)](https://github.com/openUwU/eleven/actions/workflows/release.yml)
+[![CI](https://github.com/openUwU/TwelveMusic/actions/workflows/ci.yml/badge.svg)](https://github.com/openUwU/TwelveMusic/actions/workflows/ci.yml)
+[![Release](https://github.com/openUwU/TwelveMusic/actions/workflows/release.yml/badge.svg)](https://github.com/openUwU/TwelveMusic/actions/workflows/release.yml)
 
 A feature-rich, high-performance Discord music bot built with **TypeScript**, **discord.js v14**, **Shoukaku** (Lavalink), **PostgreSQL**, and **Redis**.
 
@@ -41,8 +41,8 @@ Before running the bot, ensure you have:
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone https://github.com/openUwU/eleven.git
-cd eleven
+git clone https://github.com/openUwU/TwelveMusic.git
+cd TwelveMusic
 npm install
 ```
 
@@ -128,21 +128,21 @@ This spins up:
 | `pg` | PostgreSQL 16, with a persisted volume |
 | `redis` | Redis 7, password-protected |
 | `migrate` | Runs `npm run migrate` once against `pg`, then exits |
-| `eleven` | Installs deps and runs the bot itself, on port `6969` |
+| `TwelveMusic` | Installs deps and runs the bot itself, on port `6969` |
 
-Note: `eleven` and `migrate` bind-mount the repo and run `npm install && npm run build && npm run start` on container start rather than baking a prebuilt image — so the first boot takes a little longer while it installs, and container restarts re-run install/build against whatever is in your working tree.
+Note: `TwelveMusic` and `migrate` bind-mount the repo and run `npm install && npm run build && npm run start` on container start rather than baking a prebuilt image — so the first boot takes a little longer while it installs, and container restarts re-run install/build against whatever is in your working tree.
 
 ---
 
 ## Pterodactyl Guide
 
-This guide explains how to host Eleven on a Pterodactyl panel.
+This guide explains how to host Twelve Music on a Pterodactyl panel.
 
 ### 1. Download the Latest Release
 
 Download the latest release directly:
 ```
-https://github.com/OpenUwU/eleven/releases/latest/download/eleven.zip
+https://github.com/OpenUwU/TwelveMusic/releases/latest/download/TwelveMusic.zip
 ```
 
 ### 2. Get a Pterodactyl Server
@@ -248,16 +248,16 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Reporting Bugs
 
-Bugs are tracked as [GitHub issues](https://github.com/openUwU/eleven/issues) — use the bug report template so we get the repro steps and version up front.
+Bugs are tracked as [GitHub issues](https://github.com/openUwU/TwelveMusic/issues) — use the bug report template so we get the repro steps and version up front.
 
 ## Contributors 
 
-<a href="https://github.com/openUwU/eleven/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=openUwU/eleven" />
+<a href="https://github.com/openUwU/TwelveMusic/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=openUwU/TwelveMusic" />
 </a>
 
 ### Credits
 - **Created by**: [@mooncarli](https://github.com/mooncarli), [@bre4d777](https://github.com/bre4d777), [@dev-prayag](https://github.com/dev-prayag), and [OpenUwU](https://github.com/openUwU) Contributors.
 
 ### Acknowledgements
-- **[NodeLink](https://github.com/PerformanC/NodeLink)**: For the lyrics fetching implementation ported into the `/lyrics` command.\n\n## Status\nAhh Eleven base imported and configured for the shared TripleN Lavalink node.\n
+- **[NodeLink](https://github.com/PerformanC/NodeLink)**: For the lyrics fetching implementation ported into the `/lyrics` command.\n\n## Status\nAhh Twelve Music base imported and configured for the shared TripleN Lavalink node.\n
