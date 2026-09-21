@@ -14,7 +14,8 @@
     "format": "biome format ./src --write",
     "lint": "biome lint ./src",
     "prepare": "husky",
-    "migrate": "node scrpt/migrate.js"
+    "migrate": "node scrpt/migrate.js",
+    "postinstall": "tsc"
   },
   "lint-staged": {
     "**/*.{ts,js}": [
