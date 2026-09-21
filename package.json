@@ -1,7 +1,7 @@
 {
-  "name": "ahh-eleven",
+  "name": "twelve-music",
   "version": "3.0.8",
-  "description": "Ahh Eleven — Discord music bot",
+  "description": "Twelve Music — Discord music bot",
   "type": "module",
   "license": "OUSL-1.0",
   "author": "Pauze",
