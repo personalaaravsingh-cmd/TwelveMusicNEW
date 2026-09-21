@@ -19,7 +19,7 @@ export const config = {
 	ownerIds: ["931059762173464597"] as string[],
 	voteEnabled: env.VOTE_ENABLED,
 	colors: {
-		default: 0xffffe8,
+		default: 0x8b5cf6,
 		success: 0x2ecc71,
 		error: 0xed4245,
 		warn: 0xfee75c,

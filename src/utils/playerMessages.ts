@@ -140,7 +140,7 @@ function buildNowPlayingContainer(player: MusicPlayer, track: QueueTrack): Conta
 
 	container.addActionRowComponents(buildPlayerControlsRow(player));
 
-	if (bottomLine) container.addTextDisplayComponents(TextDisplay(`-# ${bottomLine}`));
+	container.addTextDisplayComponents(TextDisplay("-# Use the controls below to manage playback"));
 
 	return container;
 }

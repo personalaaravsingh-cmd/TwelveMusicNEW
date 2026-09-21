@@ -20,6 +20,7 @@ import type { MusicPlayer, QueueTrack } from "../../structures/music/index.js";
 import { defineCommand } from "../../types/index.js";
 import {
 	ActionRow,
+	baseSection,
 	dangerButton,
 	defContainer,
 	errorContainer,
@@ -27,7 +28,9 @@ import {
 	primaryButton,
 	Separator,
 	TextDisplay,
+	Thumbnail,
 } from "../../utils/components.js";
+import { buildPlayerControlsRow } from "../../utils/playerButtons/index.js";
 import { TrackDecoder } from "../../utils/trackDecoder.js";
 
 const COLLECTOR_TIME = 300_000;
@@ -45,7 +48,9 @@ export function buildNowPlaying(
 	disabled = false,
 ) {
 	const container = defContainer();
-	container.addTextDisplayComponents(TextDisplay("### Now Playing"));
+	const section = baseSection();
+	section.addTextDisplayComponents(TextDisplay("## TWELVE MUSIC"));
+	section.addTextDisplayComponents(TextDisplay("### Now Playing"));
 
 	const fullArtist = track.info.author || "Unknown";
 	const mainArtist = sanitize(fullArtist.split(/,|\/|;/)[0]?.trim() || "Unknown", 40);
@@ -53,9 +58,11 @@ export function buildNowPlaying(
 	const duration = track.info.isStream ? "Live" : TrackDecoder.formatDuration(track.info.length);
 	const position = track.info.isStream ? "" : TrackDecoder.formatDuration(player.position);
 
-	container.addTextDisplayComponents(
+	section.addTextDisplayComponents(
 		TextDisplay(`**[${safeTitle}](${track.info.uri})**\n-# ${emoji.get("artist")} ${mainArtist}`),
 	);
+	section.setThumbnailAccessory(Thumbnail("Track artwork", track.info.artworkUrl ?? "https://cdn.discordapp.com/embed/avatars/0.png"));
+	container.addSectionComponents(section);
 
 	if (track.info.isStream) {
 		container.addTextDisplayComponents(TextDisplay(`-# ${emoji.get("duration_grey")} \`Live\``));
@@ -81,9 +88,13 @@ export function buildNowPlaying(
 		row.addComponents(linkButton("View Album", track.pluginInfo.albumUrl as string));
 	}
 	if (row.components.length > 0) container.addActionRowComponents(row);
+	container.addActionRowComponents(buildPlayerControlsRow(player));
 
-	const footer = [`Added by ${track.requester.username}`];
-	if (player.queue.size > 0) footer.push(`${player.queue.size} in queue`);
+	const footer = [
+		`Requested by ${track.requester.username}`,
+		`${player.queue.size} queued`,
+		`Volume ${player.volume}%`,
+	];
 	container.addTextDisplayComponents(TextDisplay(`-# ${footer.join(" • ")}`));
 
 	return container;
